@@ -1,0 +1,92 @@
+local NothingLibrary = loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/3345-c-a-t-s-u-s/NOTHING/main/source.lua'))();
+local Windows = NothingLibrary.new({
+	Title = "NOTHING",
+	Description = "Nothing UI Library",
+	Keybind = Enum.KeyCode.LeftControl,
+	Logo = 'http://www.roblox.com/asset/?id=18898582662'
+})
+
+local TabFrame = Windows:NewTab({
+	Title = "Example",
+	Description = "example tab",
+	Icon = "rbxassetid://7733960981"
+})
+
+local Section = TabFrame:NewSection({
+	Title = "Section",
+	Icon = "rbxassetid://7743869054",
+	Position = "Left"
+})
+
+local InfoSection = TabFrame:NewSection({
+	Title = "Information",
+	Icon = "rbxassetid://7733964719",
+	Position = "Right"
+})
+
+Section:NewButton({
+	Title = "Auto Attack",
+	Callback = function()
+		print('local args = {
+	"UseMove",
+	{
+		CFrame.new(1057.6533203125, 166.4924774169922, 1197.558837890625, -0.3577479124069214, 0, -0.9338182210922241, 0, 1, -0, 0.9338182210922241, -0, -0.3577479124069214)
+	},
+	1764117596.385011
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Utility"):WaitForChild("Network"):WaitForChild("Events"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+)
+	end,
+})
+
+Section:NewButton({
+	Title = "Teleport to Portals",
+	Callback = function()
+		print('local args = {
+	"TeleportToPortals",
+	{},
+	1764117993.1227374
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Utility"):WaitForChild("Network"):WaitForChild("Events"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+')
+	end,
+})
+
+Section:NewButton({
+	Title = "Leave",
+	Callback = function()
+		print('local args = {
+	"LeaveDeathGame",
+	[3] = 1764117971.9558525
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Utility"):WaitForChild("Network"):WaitForChild("Events"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+')
+	end,
+})
+
+Section:NewDropdown({
+	Title = "Dropdown",
+	Data = {1,2,3,4,5},
+	Default = 1,
+	Callback = function(a)
+		print(a)
+	end,
+})
+
+Section:NewDropdown({
+	Title = "Method",
+	Data = {'Teleport','Locker','Auto'},
+	Default = 'Auto',
+	Callback = function(a)
+		print(a)
+	end,
+})
+
+InfoSection:NewTitle('UI by CATSUS')
+InfoSection:NewButton({
+	
+	Title = "Discord",
+	Callback = function()
+		print('discord.gg/BH6pE7jesa')
+	end,
+})
